@@ -13,7 +13,7 @@
 - [imaginairy](#imaginairy)
 - [awesome-full-stack-machine-learning-courses](#awesome-full-stack-machine-learning-courses)
 - [auto-gpt](#auto-gpt)
-- [moltbot](#moltbot)
+- [openclaw](#openclaw)
 - [git-sync](#git-sync)
 - [goku (Saiyan-World)](#goku-saiyan-world)
 - [csm (SesameAILabs)](#csm-sesameailabs)
@@ -535,46 +535,51 @@ cargo add rig-core
 
 
 
-## moltbot
+## openclaw
 
-**TL;DR:** Moltbot is a *personal AI assistant* you run on your own devices. It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, Microsoft Teams, WebChat), plus extension channels like Blu?
+**TL;DR:** OpenClaw — персональный AI-ассистент, который работает на ваших устройствах и отвечает в привычных каналах (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, Microsoft Teams, WebChat + BlueBubbles/Matrix/Zalo). Есть голос (macOS/iOS/Android) и Live Canvas; Gateway — контрольная плоскость.
 
 ### Быстрый выбор
 - ✅ Используй если:
-  - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
-  - Anthropic (Claude Pro/Max)
-  - OpenAI (ChatGPT/Codex)
+  - Нужен личный always-on ассистент с мультиканальным inbox
+  - Нужны голос/Canvas/браузерные и системные действия через tools/skills
+  - Готов пройти onboarding wizard `openclaw onboard` и подключить каналы + LLM
 - ❌ Не используй если:
-  - Other stacks / needs review
+  - Нужен детерминированный pipeline без LLM
+  - Нет доступа к LLM OAuth/API key и каналам
+  - Нет возможности держать Gateway на своей машине/сервере
 
 ### 🚀 Запуск
 ```bash
-# См. документацию: https://github.com/moltbot/moltbot/blob/main/README.md
+npm install -g openclaw@latest
+openclaw onboard --install-daemon
 ```
 
 ### 🧩 Архитектура
-- **Category:** ML
-- **Stack:** TypeScript, Docker, Django
-- **Entrypoints:** См. README
+- **Category:** AI
+- **Stack:** TypeScript, Node.js
+- **Entrypoints:** `openclaw` CLI (wizard, gateway, agent)
 
 ### 🧪 Примеры задач
-- Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
-- Anthropic (Claude Pro/Max)
-- OpenAI (ChatGPT/Codex)
+- Личный ассистент в мессенджерах с роутингом по агентам/воркспейсам
+- Голосовой режим (macOS/iOS/Android) + Live Canvas
+- Автоматизации через браузер/CLI/skills и cron-сценарии
 
 ### ⚠️ Ограничения
-- Other stacks / needs review
+- Требуются подписки/ключи LLM (Anthropic/OpenAI) и настройка каналов
+- Не подходит для полностью детерминированных сценариев без LLM
+- Нужен Node >=22 и постоянно работающий Gateway
 
 ### 🧭 Fit / Maturity / Ops
-- **Fit:** Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
+- **Fit:** персональный AI-ассистент с мультиканальными чатами и локальным Gateway
 - **Maturity:** active
-- **Latency/Cost:** fast
-- **Data constraints:** ?
-- **Ops friction:** unknown
+- **Latency/Cost:** quality
+- **Data constraints:** LLM OAuth/API key, channel creds
+- **Ops friction:** medium
 
 ### Full links
-- Repo: https://github.com/moltbot/moltbot
-- Original README: https://github.com/moltbot/moltbot/blob/main/README.md
+- Repo: https://github.com/openclaw/openclaw
+- Original README: https://github.com/openclaw/openclaw/blob/main/README.md
 
 ---
 

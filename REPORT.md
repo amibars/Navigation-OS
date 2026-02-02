@@ -206,3 +206,9 @@
 - Coverage: Quickstart placeholders 0 (0.0%); Inputs placeholders 0 (0.0%).
 - Details: sections missing required blocks 0; TL;DR too short 0.
 - Duplicates: none detected by anchor.
+## 2026-02-02
+- Snapshot: README size 2933480 bytes; catalog rows 371; detail sections 371.
+- Catalog table: columns = #, Repo, Category, Best for, Not for, Quickstart, Maturity, Latency/Cost, Inputs, Source, Type, Deployable.
+- Coverage: Quickstart placeholders 0 (0.0%); Inputs placeholders 0 (0.0%).
+- Details: sections missing required blocks 0; TL;DR too short 0.
+- Duplicates: none detected by anchor.

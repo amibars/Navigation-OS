@@ -324,7 +324,7 @@
 | 215 | [remotion](#remotion) | Other | 🎥      Make videos programmatically with React | Не подходит для продакшена без настройки и адаптации | https://github.com/remotion-dev/remotion | active | balanced | none | owned | app | yes |
 | 216 | [marketingskills](#marketingskills) | AI | Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering. | Не подходит, если нужен детерминированный pipeline без LLM | `git clone https://github.com/coreyhaines31/marketingskills.git` | active | quality | none | owned | app | yes |
 | 217 | [comet-mcp](#comet-mcp) | MCP | MCP Server connecting to Perplexity Comet browser | Не подходит, если не используешь MCP‑интеграции | https://github.com/hanzili/comet-mcp | active | balanced | browser | owned | service | yes |
-| 218 | [openclaw](#openclaw) | AI | Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 | Не подходит, если нужен детерминированный pipeline без LLM | `npm install -g openclaw@latest` | active | quality | API key, RPC, browser, TG token | owned | app | yes |
+| 218 | [openclaw](#openclaw) | AI | Personal AI assistant across messaging channels + voice + Canvas | Не подходит, если нужен детерминированный pipeline без LLM | `npm install -g openclaw@latest` | active | quality | LLM OAuth/API key, channel creds, Node 22+ | owned | app | yes |
 | 219 | [anime](#anime) | Other | JavaScript animation engine | Не подходит, если нельзя запускать браузерную автоматизацию | https://github.com/juliangarnier/anime | active | balanced | browser | owned | app | yes |
 | 220 | [Free-APIs.github.io](#free-apisgithubio) | Other | A collection of free APIs for new and experienced developers | Не подходит для продакшена без настройки и адаптации | https://github.com/Free-APIs/Free-APIs.github.io | maintained | balanced | none | owned | service | yes |
 | 221 | [telegram-web-app-bot](#telegram-web-app-bot) | Trading | Telegram Web App for Bot Example. All WebApp-related questions you can ask in Discussions | Не подходит для реальных денег без длительного тестирования | https://github.com/alexkoshmelev/telegram-web-app-bot | stale | fast | TG token | owned | app | yes |
@@ -20742,44 +20742,48 @@ https://github.com/hanzili/comet-mcp
 
 ## openclaw
 
-**TL;DR:** openclaw — Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞. Относится к категории AI и закрывает типичные практические задачи без лишней сборки с нуля. Для работы обычно нужны входы: API key, RPC, browser, TG token. Подходит, если устраивает зрелость active и баланс quality. Ограничение: не подходит для сценария 'Не подходит, если нужен детерминированный pipeline без LLM'.
+**TL;DR:** OpenClaw — персональный AI-ассистент, который работает на ваших устройствах и отвечает в привычных каналах (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, Microsoft Teams, WebChat + BlueBubbles/Matrix/Zalo). Есть голос (macOS/iOS/Android) и Live Canvas; Gateway — контрольная плоскость. Для запуска нужен Node >=22 и LLM-аутентификация (OAuth/API key) плюс доступы к каналам.
 
 ### Быстрый выбор
-- ✅ Используй если: нужен инструмент категории AI
-- ✅ Используй если: решаешь задачу 'Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞'
-- ✅ Используй если: есть доступ к API key, RPC, browser, TG token
-- ❌ Не используй если: Не подходит, если нужен детерминированный pipeline без LLM
-- ❌ Не используй если: нет доступа к API key, RPC, browser, TG token
-- ❌ Не используй если: нужен другой стек или узкая ниша
+- ✅ Используй если: нужен личный always-on ассистент с мультиканальным inbox
+- ✅ Используй если: нужны голос/Canvas/браузерные и системные действия через инструменты и skills
+- ✅ Используй если: готов пройти wizard `openclaw onboard` и подключить каналы + LLM
+- ❌ Не используй если: нужен детерминированный pipeline без LLM
+- ❌ Не используй если: нет доступа к LLM OAuth/API key и каналам
+- ❌ Не используй если: нет возможности держать Gateway на своей машине/сервере
 
 ### 🚀 Запуск
-`npm install -g openclaw@latest`
+```
+npm install -g openclaw@latest
+openclaw onboard --install-daemon
+```
 
 ### 🧩 Архитектура
 - **Category:** AI
 - **Type:** app
 - **Language:** TypeScript
-- **Inputs:** API key, RPC, browser, TG token
+- **Inputs:** Node >=22, LLM OAuth/API key, channel creds
 
 ### 🧪 Примеры задач
-- Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 
-- Быстрый прототип/интеграция под AI
-- Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
+- Личный ассистент в мессенджерах с роутингом по агентам/воркспейсам
+- Голосовой режим (macOS/iOS/Android) + Live Canvas
+- Автоматизации через браузер/CLI/skills, cron-сценарии
 
 ### ⚠️ Ограничения
-- Качество/полнота зависит от исходного README
-- Требуются настройки или ключи, если указано в Inputs
-- Может быть экспериментальным или нишевым
+- Требуются подписки/ключи LLM (Anthropic/OpenAI) и настройка каналов
+- Не подходит для полностью детерминированных сценариев без LLM
+- Нужен Node >=22 и постоянно работающий Gateway
 
 ### 🧭 Fit / Maturity / Ops
-- **Fit:** Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
+- **Fit:** персональный AI-ассистент с мультиканальными чатами и локальным Gateway
 - **Maturity:** active
 - **Latency/Cost:** quality
-- **Data constraints:** API key, RPC, browser, TG token
+- **Data constraints:** LLM OAuth/API key, channel creds
 - **Ops friction:** medium
 
 ### Full links
 - Repo: https://github.com/openclaw/openclaw
+- Docs: https://docs.openclaw.ai
 
 ## anime
 
